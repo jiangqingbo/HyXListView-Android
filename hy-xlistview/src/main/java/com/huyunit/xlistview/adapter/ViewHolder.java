@@ -1,12 +1,15 @@
-package com.huyunit.xlistview.hyxlistview_android.adapter.base;
+package com.huyunit.xlistview.adapter;
 
 import android.util.SparseArray;
 import android.view.View;
 
 /**
  * 万能的viewHolder
+ * author: bobo
+ * create time: 2016/11/08 14:35
+ * Email: jqbo84@163.com
  */
-public class BaseViewHolder {
+public class ViewHolder {
     @SuppressWarnings("unchecked")
     public static <T extends View> T get(View view, int id) {
         SparseArray<View> viewHolder = (SparseArray<View>) view.getTag();

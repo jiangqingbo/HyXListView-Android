@@ -1,20 +1,17 @@
-package com.huyunit.xlistview.hyxlistview_android.adapter.base;
+package com.huyunit.xlistview.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.BaseAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * ListAdapter自定义的抽象类集成基类的实现方式
  *
  * @author: bobo Email: jqbo84@163.com
- * create date: 2014-12-23 上午11:29:05
+ * create date: 2016-10-10 下午16:29:05
  */
 
-public abstract class BaseListAdapter<T> extends BaseAdapter {
+public abstract class BaseArrayAdapter<T> extends BaseAdapter {
 
     /**
      * 上下文
@@ -27,28 +24,28 @@ public abstract class BaseListAdapter<T> extends BaseAdapter {
     /**
      * 适配器的数据源
      */
-    public List<T> dataList = new ArrayList<T>();
+    public T[] datas;
 
-    public BaseListAdapter(Context context, List<T> dataList) {
+    public BaseArrayAdapter(Context context, T[] datas) {
         super();
         this.context = context;
         this.mInflater = LayoutInflater.from(context);
-        this.dataList = dataList;
+        this.datas = datas;
     }
 
     @Override
     public int getCount() {
-        return dataList == null ? 0 : dataList.size();
+        return datas == null ? 0 : datas.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return dataList == null || dataList.size() <= 0 ? null : dataList.get(position);
+        return datas == null || datas.length <= 0 ? null : datas[position];
     }
 
     @Override
     public long getItemId(int position) {
-        return dataList.size() != 0 ? position : -1;
+        return datas.length != 0 ? position : -1;
     }
 
 }

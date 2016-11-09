@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.huyunit.xlistview.adapter.BaseListAdapter;
+import com.huyunit.xlistview.adapter.ViewHolder;
 import com.huyunit.xlistview.hyxlistview_android.R;
-import com.huyunit.xlistview.hyxlistview_android.adapter.base.BaseListAdapter;
-import com.huyunit.xlistview.hyxlistview_android.adapter.base.BaseViewHolder;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class TextListAdapter extends BaseListAdapter<String> {
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.a_text_list_item, null);
         }
-        TextView text = BaseViewHolder.get(convertView, R.id.tv_name);
+        TextView text = ViewHolder.get(convertView, R.id.tv_name);
 
         String s = dataList.get(position);
         text.setText(s);
