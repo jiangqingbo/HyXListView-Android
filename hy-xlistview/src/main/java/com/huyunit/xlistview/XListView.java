@@ -14,6 +14,8 @@ import android.widget.RelativeLayout;
 import android.widget.Scroller;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+
 /**
  * author: bobo
  * create time: 2016/11/08 14:35
@@ -295,6 +297,7 @@ public class XListView extends ListView implements OnScrollListener {
                             && mHeaderView.getVisiableHeight() > mHeaderViewHeight) {
                         mPullRefreshing = true;
                         mHeaderView.setState(XListViewHeader.STATE_REFRESHING);
+                        mHeaderTimeView.setText(new SimpleDateFormat("yyyy.MM.dd HH:mm:ss").format(System.currentTimeMillis()));
                         if (mListViewListener != null) {
                             mListViewListener.onRefresh();
                         }
