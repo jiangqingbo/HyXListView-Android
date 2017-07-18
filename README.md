@@ -5,5 +5,4 @@
 
 `     
 gradle： compile 'com.huyunit:hy-xlistview:1.0.2'
-
 `
